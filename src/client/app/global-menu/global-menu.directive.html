@@ -1,0 +1,77 @@
+<nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+    <i class="fa fa-bars fa-2x pull-left"
+        ng-click="menuVm.open = !menuVm.open" ng-if= "menuVm.isAuthenticated">
+    </i>
+    <i class="fa fa-user-secret fa-2x author-contact" aria-hidden="true" ng-if= "!menuVm.isAuthenticated" ng-click="menuVm.show = !menuVm.show"></i>
+    <div class="pull-right" ng-if= "menuVm.isAuthenticated">
+        <span class="add-padding dropdown">
+            <!-- <span ng-if="!menuVm.isPhoto">
+                <img src="/src/client/images/avatar.png" class="profile-image">
+            </span> -->
+            <span>
+                <img ng-src={{menuVm.isPhoto()}} class="profile-image">
+            </span>
+            <span class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                             {{menuVm.name}}
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <!-- <li role="separator" class="divider"></li> -->
+                <li><a href="#" ng-click="menuVm.logout()">SignOut</a></li>
+            </ul>
+        </span>
+    </div>
+    <div class="pull-right" ng-if="menuVm.isAuthenticated">
+        <span class="add-padding" ui-sref="editprofile" ui-sref-active="active">Profile</span>
+        <span class="add-padding" ui-sref="dashboard" ui-sref-active="active">Dashboard</span>
+    </div>
+    <div class="pull-right" ng-if= "!menuVm.isAuthenticated">
+            <span class="add-padding" ui-sref="login" ui-sref-active="active">Login</span>
+            <span class="add-padding" ui-sref="signup" ui-sref-active="active">Signup</span>
+    </div>
+</nav>
+<pageslide ps-open="menuVm.open" ps-side="left" ps-push="true">
+    <div class="global-pageslide">
+        <span><h4>Hello, {{menuVm.name}}</h4></span>
+    </div>
+
+    <div class="global-pageslide header-size hvr-grow">
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i> <span ui-sref="editprofile">Profile</span>
+    </div>
+    <div class="global-pageslide header-size ">
+        <div class="hvr-grow">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i> <span ui-sref="dashboard">Dashboard</span>
+        </div>
+    </div>
+    <div class="global-pageslide header-size ">
+        <div class="hvr-grow" ng-click="menuVm.show = !menuVm.show">
+            <i class="fa fa-user-secret fa-lg" aria-hidden="true"></i> <span>Contact</span>
+        </div>
+    </div>
+    <div class="global-pageslide header-size hvr-grow">
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i> <span ng-click="menuVm.logout()">Signout</span>
+    </div>
+</pageslide>
+
+<div class='ng-modal' ng-show='menuVm.show'>
+  <div class='ng-modal-overlay' ng-click='menuVm.hideModal()'></div>
+  <div class='ng-modal-dialog'>
+    <div class="modal-head">
+        <i class="fa fa-envelope fa-2x email-symbol" aria-hidden="true"></i> <span class="email-symbol">Contact author</span>
+    </div>
+    <div class='ng-modal-close' ng-click='menuVm.hideModal()' >
+        <i class="fa fa-times author-contact fa-lg" aria-hidden="true"></i>
+    </div>
+    <div class='ng-modal-dialog-content' >
+        <input type="text" name="name" class="form-control login-control" placeholder="Name" ng-model="menuVm.messageName">
+        <input type="email" name="email" class="form-control login-control" placeholder="Email" ng-model="menuVm.messageEmail"><!-- 
+        <input type="text" name="name" class="form-control login-control" placeholder="Subject"> -->
+        <textarea placeholder="Message.." ng-model="menuVm.messageText">   
+        </textarea>
+        <hr class="line-style">
+        <span class="btn btn-primary" ng-click="menuVm.sendMessage()">
+        <i class="fa fa-paper-plane" aria-hidden="true"></i> Send</span>
+        <span class="btn btn-default" ng-click="menuVm.hideModal()">Cancel</span>
+    </div>
+  </div>
+</div>

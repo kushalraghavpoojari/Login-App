@@ -1,0 +1,22 @@
+<global-menu></global-menu>
+<div class="content static-top-body static-bottom-body ">
+    <div class="row text-center box">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form form-group">
+                <form name="signupForm">
+                    <input type="text" name="name" placeholder="Name" class="form-control login-control" ng-model="signupVm.userName">
+                    <input type="email" name="email" placeholder="Email" class="form-control login-control" ng-model="signupVm.userEmail">
+                    <p ng-show="signupForm.email.$invalid && !signupForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                    <input type="password" name="password" placeholder="Password" class="form-control login-control" ng-minlength="4" ng-model="signupVm.userPassword">
+                    <p ng-show="signupForm.password.$error.minlength" class="help-block">Password is too short.</p>
+                    <input type="password" name="password" placeholder="Confirm Password" class="form-control login-control" ng-minlength="4" ng-model="signupVm.userConfirmPassword">
+                    <p ng-show="loginForm.password.$error.minlength" class="help-block">Password doesn't match.</p>
+                    <button class="form-control login-control btn btn-primary" ng-click="signupVm.signup()" ng-disabled="!signupVm.match()">SIGNUP</button>
+                    <p class="message">Already registered? <a ui-sref="login">Signin</a></p>
+                    <p class="help-block">{{signupVm.errorBlock.error}}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+      

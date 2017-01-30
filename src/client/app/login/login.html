@@ -1,0 +1,36 @@
+<global-menu></global-menu>       
+<div class="content static-top-body static-bottom-body ">
+    <div class="row text-center box">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form form-group " ng-class="{'wobble animated': loginVm.anijs}">
+                <form name="loginForm" novalidate>
+                    <input type="email" name="email" placeholder="Email" class="form-control login-control" ng-model="loginVm.userEmail" required>
+                    <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                    <input type="password" name="password" placeholder="Password" class="form-control login-control" ng-model="loginVm.userPassword" required>
+                    <button class="form-control login-control btn btn-primary" ng-click="loginVm.login()">LOGIN</button>
+                    <p class="message">Not registered? <a ui-sref="signup">Create an account</a></p>
+                </form>
+                <p class="help-block">{{loginVm.errorBlock.error}}</p>
+                <p><a ui-sref="forgot">Forgot password?</a></p>
+            </div> 
+        </div>
+        <div class="row">   
+            <div class="col-sm-4">
+                <div class="btn-group shake">
+                    <button type="button" class="btn btn-primary" ng-click="loginVm.authenticate('facebook')"><i class="fa fa-facebook"></i> Sign in with Facebook</button>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" ng-click="loginVm.authenticate('google')"><i class="fa fa-google-plus"></i> Sign in with GooglePlus</button>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="btn-group">
+                    <button type="button" class="btn github"><i class="fa fa-github" ng-click="loginVm.authenticate('Github')"></i> Sign in with Github</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+      

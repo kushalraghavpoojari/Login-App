@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+    <title>Login App</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bower_components/hover/css/hover.css" />
+    <link rel="stylesheet" href="/bower_components/angularjs-datepicker/src/css/angular-datepicker.css" />
+    <link rel="stylesheet" href="/bower_components/angular-google-places-autocomplete/src/autocomplete.css" />
+
+     <link rel="stylesheet" type="text/css" href="/bower_components/csshake/dist/csshake.css">
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet/less" type="text/css" href="./styles/styles.less">
+    <!-- endinject -->
+</head>
+<body>
+    <div ui-view>
+
+    </div>
+
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/less/dist/less.js"></script>
+    <script src="/bower_components/satellizer/dist/satellizer.js"></script>
+    <script src="/bower_components/anijs/dist/anijs-min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="/bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="/src/client/app.module.js"></script>
+    <script src="/src/client/app.routes.js"></script>
+    <script src="/src/client/app/main/main.controller.js"></script>
+    <script src="/src/client/app/global-menu/global-menu.directive.js"></script>
+    <script src="/src/client/app/login/login.controller.js"></script>
+    <script src="/src/client/app/signup/signup.controller.js"></script>
+    <script src="/src/client/app/profile/edit-profile.controller.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.controller.js"></script>
+    <script src="/src/client/app/authToken.factory.js"></script>
+    <script src="/src/client/app/userData.factory.js"></script>
+    <script src="/src/client/app/authInterceptor.factory.js"></script>
+    <script src="/src/client/app/authService.factory.js"></script>
+    <script src="/node_modules/angular-pageslide-directive/dist/angular-pageslide-directive.js"></script>
+    <!-- endinject -->
+</body>
+</html>

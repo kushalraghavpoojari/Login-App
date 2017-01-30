@@ -1,0 +1,209 @@
+<global-menu></global-menu>
+<div class="content static-top-body static-bottom-body">
+    <div class="row bg-grey">
+        <div class="row bg">
+            <h2 class="left-padding">Profile
+                <span class="btn btn-success edit-profile" ng-click="profileVm.isEditValue()">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"> Edit</i>
+                </span>
+            </h2>   
+        </div>
+        <div class="col-md-3 edit-profile-left-panel" ng-if="!profileVm.isEdit">
+            <div class="text-center padding" id="edit">
+              <!-- <div class="avatar padding hvr-grow" ng-if="profileVm.isEdit">
+                    <i class="fa fa-camera-retro fa-5x upload-padding btn" ng-click="profileVm.imageUpload()"></i>
+                    <input type="file" id="imageUpload" accept="image/gif, image/jpeg, image/png">
+              </div> -->
+              <div class="padding hvr-grow">
+                    <img ng-src={{profileVm.getPhoto()}} class="img-circle profile-img">
+              </div>
+              <div>
+                    <h3>{{profileVm.name}}</h3>
+              </div>
+              <hr>
+              <div>
+                  loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom loreum epsom 
+              </div>
+              <!-- <div ng-if="profileVm.isEdit">
+                    <input type="text" value="{{profileVm.name}}" class="form-control" >
+              </div> -->
+            </div>
+        </div>
+        <div class="col-md-3 edit-profile-left-panel" ng-if="profileVm.isEdit">
+            <div class="text-center padding" id="edit">
+              <div class="avatar padding hvr-grow">
+                    <i class="fa fa-camera-retro fa-5x upload-padding btn" ng-click="profileVm.imageUpload()"></i>
+                    <input type="file" id="imageUpload" accept="image/gif, image/jpeg, image/png">
+              </div>
+              <div class="add-margin">
+                    <input type="text" value="{{profileVm.name}}" class="form-control" >
+              </div>
+              <hr>
+              <div>
+                  <textarea>
+                      {{profileVm.bio}}
+                  </textarea> 
+              </div>
+            </div>
+        </div>
+        <div class="col-md-8" class="edit-profile-right-panel">
+            <div class="row">
+               <div ng-if="!profileVm.isEdit">
+                    <div class="edit-profile-right-panel">
+                        <h4 class="personal-info">Personal info</h4 class="personal-info">
+                        <hr/>
+                        <div class="row profile-layout">
+                            <!-- <form name="editProfileForm" ng-if="profileVm.isEdit">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label>Name:</label>   
+                                    </div>
+                                    <div class="col-md-8">
+                                      <input class="form-control login-control" type="text" value="profileVm.userName">
+                                    </div>
+                               </div>
+                               <div class="form-group">
+                                    <label class="col-md-3">:</label>
+                                    <div class="col-md-8">
+                                      <input class="form-control login-control" type="text" value="profileVm.">
+                                    </div>
+                               </div>
+                               <div class="form-group">
+                                   <label class="col-md-3">Gender</label> 
+                                   <input type="radio" value="Male" ng-model="radioValue">Male  
+                               </div>
+                            </form> -->
+                            <form name="editProfileForm" class="form-class" ng-if="!profileVm.isEdit">
+                                <div class="form-group"> 
+                                    <div class="row">
+                                        <label class="col-md-3">Name :</label>
+                                        <h5 class="col-md-9 remove-margin">{{profileVm.name}}</h5>
+                                    </div>    
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Phone :</label>
+                                        <h5 class="col-md-9 remove-margin">{{profileVm.phone}}</h5>
+                                    </div> 
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Gender :</label>
+                                        <h5 class="col-md-9 remove-margin">{{profileVm.gender}}</h5>
+                                    </div> 
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Date of Birth :</label>
+                                        <h5 class="col-md-9 remove-margin">{{profileVm.dob}}</h5>
+                                    </div> 
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Age :</label>
+                                        <h5 class="col-md-9 remove-margin">{{profileVm.age}}</h5>
+                                    </div> 
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Location :</label>
+                                        <h5 class="col-md-9 remove-margin">{{profileVm.location}}</h5>
+                                    </div> 
+                               </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div ng-if="profileVm.isEdit">
+                    <div class="edit-profile-right-panel">
+                        <h4 class="personal-info">Personal info</h4 class="personal-info">
+                        <hr/>
+                        <div class="row profile-layout">
+                            <form name="editProfileForm" class="form-class">
+                                <div class="form-group"> 
+                                    <div class="row">
+                                        <label class="col-md-3">Name :</label>
+                                        <div class="col-md-8">
+                                            <input class="col-md-8 remove-margin form-control" type="text" name="name" value="{{profileVm.name}}" ng-model="profileVm.name" class="form-control">
+                                        </div>
+                                    </div>    
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Phone :</label>
+                                        <div class="col-md-8">
+                                            <input class="col-md-8 remove-margin form-control" type="number" name="phone" value="{{profileVm.phone}}" class="form-control" ng-model="profileVm.phone">
+                                        </div> 
+                                    </div>
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Gender :</label>
+                                        <div class="col-md-8">
+                                            <select name="gender" class="form-control remove-margin" ng-model="profileVm.gender">
+                                                <option value="">Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div> 
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Date of Birth :</label>
+                                        <div class="col-md-4">
+                                            <datepicker class="remove-margin date-pick" date-format="MM/d/yyyy">
+                                              <input ng-model="profileVm.dob" type="text" class="col-md-8 remove-margin form-control"/>
+                                            </datepicker>
+                                        </div>
+                                    </div> 
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Age :</label>
+                                        <div class="col-md-8">
+                                            {{profileVm.age()}}
+                                        </div> 
+                                    </div>    
+                               </div>
+                               <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-3">Location :</label>
+                                        <div class="col-md-8">
+                                            <input class="remove-margin form-control"  g-places-autocomplete ng-model="profileVm.place" type="text" name="location"  class="form-control">
+                                        </div>
+                                    </div>
+                               </div>
+                               <div>
+                                   <span ng-click="profileVm.link('facebook')">
+                                       <i class="fa fa-facebook-square" aria-hidden="true"></i> Link Facebook to your account
+                                   </span>
+                                   <span ng-click="profileVm.unlink('facebook')">
+                                       <i class="fa fa-facebook-square" aria-hidden="true"></i> UnLink Facebook to your account
+                                   </span>
+                               </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="edit-profile-right-panel">
+                    <h4 class="personal-info">Social</h4 class="personal-info">
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer ng-if="profileVm.isEdit" class="static-bottom edit-page animate-if ">
+    <div class="row pull-right-edit">
+        <button  
+                class="btn btn-primary"  
+                ng-click="profileVm.save()" 
+                >Save</button>       
+        <button class="btn btn-default" 
+                ng-click="profileVm.isEditValue()">Cancel</button> 
+    </div>  
+</footer>

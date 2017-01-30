@@ -1,0 +1,16 @@
+<global-menu></global-menu>  
+<div class="content static-top-body static-bottom-body ">
+    <div class="row text-center box">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form form-group">
+                <p class="forgot-password">Please Enter your Email</p>
+                <form novalidate>
+                    <input type="email" name="email" placeholder="Email" class="form-control login-control" ng-model="loginVm.passwordResetEmail" required>
+                    <button class="form-control login-control btn btn-primary" ng-click="loginVm.forgot()">Reset Password!</button>
+                </form>
+                <p class="help-block">{{loginVm.forgotPasswordError.error}}</p> 
+                <p class="mail-sent">{{loginVm.forgotPassword.result}}</p>   
+            </div> 
+        </div>
+    </div>
+</div>

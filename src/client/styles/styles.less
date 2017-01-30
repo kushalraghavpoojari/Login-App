@@ -1,0 +1,412 @@
+/**
+* System Colors
+*/
+@system-white: #fff;
+@system-light-blue: #ebf6fc;
+@system-primary-blue: #41a7e1;
+@system-medium-blue: #1483bd;
+@system-active-dark-blue: #253b56;
+@system-inactive-grey: #a1afc0;
+@system-messaging-grey: #8294aa;
+@system-active-grey: #65778a;
+@system-workspace-grey: #f2f2f2;
+@system-medium-grey: #d9d9d9;
+
+/**
+* Messaging Colors
+*/
+@messaging-light-blue: #ebf6fc;
+@messaging-dark-blue: #3a87ad;
+@messaging-light-yellow: #fcf8e3;
+@messaging-dark-yellow: #c09853;
+@messaging-green: #6fa623;
+@messaging-light-orange: #f7dcd5;
+@messaging-alert-orange: #ff6633;
+
+/**
+* Location Colors
+*/
+@magic-kingdom-blue: #1994d7;
+@water-parks-teal: #009eb2;
+@animal-kingdom-green: #628d25;
+@epcot-orange: #d0662c;
+@hollywood-studios-purple: #6f46ad;
+@other-properties-dark-blue: #0a4999;
+
+//Basic Layout
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.content.static-top-body {
+    padding-top: 64px;
+}
+.content.static-bottom-body {
+    padding-bottom: 64px;
+}
+
+
+//NAV BAR
+
+nav.navbar-default {
+    height: 64px;
+    line-height: 64px;
+    background-color: @system-active-dark-blue !important;
+    h1 {
+        color: @system-white;
+        margin: 12px 0;
+    }
+
+    .glyphicon-align-justify{
+        color: @system-white;
+        size: 25px;
+    }
+}
+
+.navbar-fixed-top {
+    position: absolute;
+    z-index: 999999;
+    border: none;
+    i.fa-bars {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: @system-white;
+        cursor: pointer;
+    }
+}
+
+.login-color {
+    color: @system-primary-blue;
+    cursor: pointer;
+}
+
+.pull-left {
+    margin-left: 10px;
+}
+.pull-right {
+    position: relative;
+    right: 0px;
+}
+
+.add-padding {
+    color: @system-white;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor:pointer;
+}
+
+.active{
+    color: orange;
+}
+
+.box {
+    margin-top : 100px;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.login-control {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.message{
+    color: @system-inactive-grey;
+}
+
+.help-block {
+    color: red;
+}
+
+.forgot-password {
+    color: @system-primary-blue;
+}
+
+.mail-sent {
+    color: green;
+}
+
+.arrow {
+    color: @system-primary-blue;
+    cursor: pointer;
+}
+.github {
+    background-color: #444;
+    color:white;
+}
+.bg-grey {
+    background-color: #f2f2f2
+}
+.edit-profile-left-panel {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.edit-profile-right-panel {
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0;
+    height: 100%;
+}
+
+.left-padding {
+    padding-left: 10px;
+}
+
+.padding {
+    padding-top: 15px !important;
+    padding-bottom: 15px;
+}
+
+.bg {
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgb(222, 224, 226);
+}
+
+.upload-padding {
+    padding-top: 55px;
+}
+
+.personal-info {
+    padding-top: 15px;
+    padding-left:15px;
+}
+
+.profile-layout {
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+.profile-image{
+    height: 36px;
+    width:36px;
+    border-radius: 50%;
+}
+
+.avatar input[type="file"]{
+    -webkit-appearance:none;
+    position:absolute;
+    top:0; left:0;
+    opacity:0;
+}
+
+#edit{
+    img:hover {
+        opacity: 0.3
+
+    }
+}
+
+.profile-img {
+    height: 200px;
+    width: 200px;
+}
+
+.edit-profile {
+    position: absolute;
+    right: 10px;
+}
+
+.edit-page {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all .3s ease;
+    @media (min-width: 768px) {
+            }
+
+    @media (max-width: 767px) {
+        height: auto;
+        width: 100%;
+    }
+}
+
+.edit-page.animate-if.ng-enter {height: 0px !important;}
+.edit-page.animate-if.ng-enter-active {height: 64px !important;}
+.edit-page.animate-if.ng-leave {height: 64px !important;}
+.edit-page.animate-if.ng-leave-active {height: 0px !important;}
+
+footer{
+    height: 64px;
+    z-index: 999;
+    width: 100%;
+    position: fixed !important;
+    bottom: 0 !important;
+    background: rgba(255, 255, 255, .95);
+        .static-bottom {
+            z-index: 99999;
+            width: 100%;
+            background: rgba(255, 255, 255, .95);
+        }
+}
+
+.pull-right-edit {
+    position: absolute;
+    right: 10px;
+    padding-top: 10px;
+    padding-right: 15px;
+}
+
+.remove-margin {
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+
+.date-pick{
+    padding-left: 0px;
+}
+
+.add-margin {
+    margin-top: 15px;
+}
+
+.form-class {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+pageslide {
+    background-color: @system-active-dark-blue;
+}
+
+.header-size {
+    font-size: 18px;
+    border-bottom: 0 !important;
+    height: 60px !important;
+}
+
+.global-pageslide {
+    cursor: pointer;
+    color: white;
+    height: 64px !important;
+    padding-top: 25px;
+    padding-left: 30px;
+    border-bottom: 0.5px solid #ccc;
+}
+textarea {
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0.5px solid #ccc
+}
+
+.btn-primary, .btn-default {
+    min-width: 131px;
+}
+
+.author-contact {
+    color: white;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.email-symbol {
+    color: white;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.line-style {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/**
+* Modal
+*/
+
+.modal-head {
+    background-color: @system-active-dark-blue;
+    height: 10%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ng-modal-overlay {
+  position:fixed;
+  z-index:999999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(195, 197, 199, 0.98);
+  opacity: 0.8;
+}
+
+.ng-modal{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:999999;
+}
+
+.ng-modal-dialog {
+  z-index:1000000;
+  position: absolute;
+  width: 80%; /* Default */
+  height: 60%;
+  border-radius: 10px;
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+
+
+}
+.ng-modal-dialog-content {
+  padding:10px;
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
+  cursor: pointer;
+  float: right !important;
+}
